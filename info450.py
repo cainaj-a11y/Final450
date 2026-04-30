@@ -51,7 +51,7 @@ df = df[df['WKSWORK1'] > 0]
 """Made three filters
 
 1.   Filters employees who whos usual hours are at least 30 hours and no more than 60
-2.   Filters employees whos income is at least 10,000 and nor more than 200000 dollars
+2.   Filters employees whos income is at least 10,000 and not more than 200,000 dollars
 3.   Filters employees to ensure that they all worked more than one week
 
 """
