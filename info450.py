@@ -154,11 +154,10 @@ tradeoff_scatter = px.scatter(sector_summary,
                  size_max=40) # Caps the maximum bubble size so they don't overlap too much
 
 tradeoff_scatter.update_layout(showlegend=False)
-
+st.plotly_chart(tradeoff_scatter, use_container_width=True)
 tradeoff_scatter.update_layout(
     yaxis_title="Number of Employees",
     xaxis=dict(range=[38, 44])
-st.plotly_chart(tradeoff_scatter, use_container_width=True)
 )
 
 """By mapping Average Weekly Hours against Average Annual Income (with bubble size showing workforce volume), this chart reveals the return on time invested across career paths. We can quickly identify:
