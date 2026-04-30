@@ -16,8 +16,8 @@ import numpy as np
 
 """
 
-df = pd.read_csv(IPUMS.csv')
-OCC_df = pd.read_csv(Occupation Codes.csv')
+df = pd.read_csv(IPUMS.csv)
+OCC_df = pd.read_csv(Occupation Codes.csv)
 
 """converted csv to dataframes"""
 
