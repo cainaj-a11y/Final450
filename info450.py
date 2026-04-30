@@ -335,18 +335,31 @@ import plotly.express as px
 
 st.title("Workforce Dashboard")
 
-# Bar chart sample
-horizontal_bar_chart = px.bar(df['Major Category'].value_counts().reset_index(),
-                    x='count',
-                    y='Major Category',
-                    orientation='h',
-                    title='Workforce Distribution: Number of Employees per Sector',
-                    labels={'count': 'Number of Employees', 'Major Category': 'Job Sector'},
-                    color='Major Category')
-horizontal_bar_chart.update_layout(showlegend=False)
-horizontal_bar_chart.show()
-
-st.plotly_chart(horizontal_bar_chart)
+import streamlit as st
+import plotly.express as px
+# Dropdown to filter sectors
+selected_sectors = st.multiselect(
+    "Select job sectors:",
+    options=df['Major Category'].unique(),
+    default=df['Major Category'].unique()
+)
+# Filter data
+filtered_df = df[df['Major Category'].isin(selected_sectors)]
+# Recreate counts
+chart_data = filtered_df['Major Category'].value_counts().reset_index()
+chart_data.columns = ['Major Category', 'count']
+# Plot
+fig = px.bar(
+    chart_data,
+    x='count',
+    y='Major Category',
+    orientation='h',
+    title='Workforce Distribution: Number of Employees per Sector',
+    labels={'count': 'Number of Employees', 'Major Category': 'Job Sector'},
+    color='Major Category'
+)
+fig.update_layout(showlegend=False)
+st.plotly_chart(fig, use_container_width=True)
 
 # Histogram sample
 histogram = px.histogram(df,
