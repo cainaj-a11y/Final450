@@ -373,6 +373,4 @@ histogram = px.histogram(df,
                     color_discrete_sequence=['#1f77b4'])
 histogram.update_layout(yaxis_title="Number of Employees")
 histogram.show()
-
-st.plotly_chart(histogram)
 st.dataframe(df)
