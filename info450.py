@@ -6,16 +6,20 @@ Original file is located at
     https://colab.research.google.com/drive/1XDp8CED3c7xraB9bBM06mGF6MRbgzCtO
 """
 
-st.title("Group 2 - Career Earnings Analysis")
-st.set_page_config(page_title="Group 2 Streamlit")
-# Part 1 - Exploratory Data Analysis and Data Preparation
+import streamlit as st
 import pandas as pd
 import numpy as np
 
-"""Imported all of the libraries and datasets
+# MUST be the first Streamlit command
+st.set_page_config(page_title="Group 2 Streamlit")
 
-"""
+# Page title
+st.title("Group 2 - Career Earnings Analysis")
 
+# Section header
+st.header("Part 1 - Exploratory Data Analysis and Data Preparation")
+
+# Load data
 df = pd.read_csv('IPUMS.csv')
 OCC_df = pd.read_csv('OccupationCodes.csv')
 
