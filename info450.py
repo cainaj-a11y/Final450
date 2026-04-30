@@ -160,8 +160,6 @@ tradeoff_scatter.update_layout(
     xaxis=dict(range=[38, 44])
 )
 
-tradeoff_scatter.show()
-
 """By mapping Average Weekly Hours against Average Annual Income (with bubble size showing workforce volume), this chart reveals the return on time invested across career paths. We can quickly identify:
 
 High-Efficiency Sectors: Careers offering high wages without exceeding the standard 40-hour work week.
